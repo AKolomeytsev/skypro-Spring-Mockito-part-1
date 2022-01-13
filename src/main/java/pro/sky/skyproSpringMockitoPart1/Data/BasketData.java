@@ -1,26 +1,20 @@
 package pro.sky.skyproSpringMockitoPart1.Data;
 
-public class BasketData {
-    private int id;
-    private String productName;
+import java.util.ArrayList;
 
-    public BasketData(int id,String productName){
-        this.setId(id);
+public class BasketData {
+    private ArrayList<String> productName;
+
+    public BasketData(ArrayList<String> productName){
         this.setProductName(productName);
     }
-    public int getId() {
-        return id;
-    }
 
-    public void setId(int id) {
-        this.id = id;
-    }
-
-    public String getProductName() {
+    public ArrayList<String> getProductName() {
         return productName;
     }
 
-    public void setProductName(String productName) {
+
+    public void setProductName(ArrayList<String> productName) {
         this.productName = productName;
     }
 }

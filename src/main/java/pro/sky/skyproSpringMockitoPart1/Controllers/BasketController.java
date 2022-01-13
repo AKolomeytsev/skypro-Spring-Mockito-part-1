@@ -6,6 +6,7 @@ import org.springframework.web.bind.annotation.RestController;
 import pro.sky.skyproSpringMockitoPart1.Data.BasketData;
 import pro.sky.skyproSpringMockitoPart1.Services.BasketService;
 
+import java.util.ArrayList;
 import java.util.Map;
 
 @RestController
@@ -18,8 +19,8 @@ public class BasketController {
     }
 
     @GetMapping(path = "/order/add")
-    public Map<Integer, String> add(@RequestParam("id") int id, @RequestParam("productName") String productName){
-        BasketData basketData = new BasketData(id, productName);
+    public Map<Integer, String> add(@RequestParam("productName") ArrayList<String> productName){
+        BasketData basketData = new BasketData(productName);
         basketService.addProduct(basketData);
         return basketService.getProducts();
     }

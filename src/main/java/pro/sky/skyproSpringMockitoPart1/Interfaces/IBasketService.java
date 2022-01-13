@@ -7,4 +7,5 @@ import java.util.Map;
 public interface IBasketService {
     void addProduct(BasketData item);
     Map<Integer, String> getProducts();
+    int inc();
 }
