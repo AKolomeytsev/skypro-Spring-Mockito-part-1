@@ -13,14 +13,17 @@ import java.util.Map;
 public class BasketController {
 
     private final BasketService basketService;
+    private BasketData basketData = new BasketData();
 
     public BasketController(BasketService basketService) {
+
         this.basketService = basketService;
+
     }
 
     @GetMapping(path = "/order/add")
     public Map<Integer, String> add(@RequestParam("productName") ArrayList<String> productName){
-        BasketData basketData = new BasketData(productName);
+        basketData.setProductName(productName);
         basketService.addProduct(basketData);
         return basketService.getProducts();
     }

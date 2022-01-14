@@ -1,7 +1,6 @@
 package pro.sky.skyproSpringMockitoPart1.Services;
 
 import org.springframework.stereotype.Service;
-import org.springframework.web.context.annotation.SessionScope;
 import pro.sky.skyproSpringMockitoPart1.Data.BasketData;
 import pro.sky.skyproSpringMockitoPart1.Interfaces.IBasketService;
 
@@ -10,7 +9,6 @@ import java.util.HashMap;
 import java.util.Map;
 
 @Service
-@SessionScope
 public class BasketService implements IBasketService {
     private int cnt = 0;
     private final Map<Integer, String> items  = new HashMap<Integer, String>();
