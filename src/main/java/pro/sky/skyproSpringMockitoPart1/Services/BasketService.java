@@ -1,5 +1,6 @@
 package pro.sky.skyproSpringMockitoPart1.Services;
 
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import pro.sky.skyproSpringMockitoPart1.Data.BasketData;
 import pro.sky.skyproSpringMockitoPart1.Interfaces.IBasketService;
@@ -10,7 +11,6 @@ import java.util.Map;
 
 @Service
 public class BasketService implements IBasketService {
-    private int cnt = 0;
     private final Map<Integer, String> items  = new HashMap<Integer, String>();
 
     @Override
@@ -29,8 +29,5 @@ public class BasketService implements IBasketService {
         return items;
     }
 
-    @Override
-    public int inc() {
-        return cnt++;
-    }
+
 }

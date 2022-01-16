@@ -13,10 +13,10 @@ import java.util.Map;
 public class BasketController {
 
     private final BasketService basketService;
-    private BasketData basketData = new BasketData();
+    private BasketData basketData; //= new BasketData();
 
-    public BasketController(BasketService basketService) {
-
+    public BasketController(BasketService basketService,BasketData basketData) {
+        this.basketData = basketData;
         this.basketService = basketService;
 
     }
