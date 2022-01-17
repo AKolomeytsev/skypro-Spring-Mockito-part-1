@@ -11,7 +11,9 @@ import java.util.HashMap;
 import java.util.Map;
 
 @Service
+@SessionScope
 public class BasketService implements IBasketService {
+
     private final Map<Integer, String> items  = new HashMap<Integer, String>();
     private BasketData basketData = new BasketData(); // Если урать new, то BasketData null
 
