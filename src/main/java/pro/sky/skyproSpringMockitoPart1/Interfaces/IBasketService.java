@@ -6,7 +6,8 @@ import java.util.ArrayList;
 import java.util.Map;
 
 public interface IBasketService {
-    void addProduct(BasketData item);
+    void addProduct();
     Map<Integer, String> getProducts();
+    void setBasketData(ArrayList<String> produts);
 
 }
