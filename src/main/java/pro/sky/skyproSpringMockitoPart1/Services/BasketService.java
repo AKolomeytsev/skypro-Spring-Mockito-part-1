@@ -1,6 +1,5 @@
 package pro.sky.skyproSpringMockitoPart1.Services;
 
-import org.springframework.context.annotation.Bean;
 import org.springframework.stereotype.Service;
 import org.springframework.web.context.annotation.SessionScope;
 import pro.sky.skyproSpringMockitoPart1.Data.BasketData;
@@ -15,8 +14,11 @@ import java.util.Map;
 public class BasketService implements IBasketService {
 
     private final Map<Integer, String> items  = new HashMap<Integer, String>();
-    private BasketData basketData = new BasketData(); // Если урать new, то BasketData null
+    private final BasketData basketData;// = new BasketData(); // Если убрать new, то BasketData null
 
+    public BasketService(BasketData basketData) {
+        this.basketData = basketData;
+    }
 
 
     @Override
